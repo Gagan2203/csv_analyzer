@@ -1,0 +1,31 @@
+id,name,age,salary,department,years_experience,performance_score,location,education,gender
+1,John Smith,34,75000,Marketing,8,4.2,New York,Bachelor,Male
+2,Sarah Johnson,29,65000,Marketing,5,3.9,Chicago,Master,Female
+3,Michael Brown,42,95000,Engineering,15,4.7,San Francisco,PhD,Male
+4,Emily Davis,31,70000,Sales,7,4.0,Los Angeles,Bachelor,Female
+5,David Wilson,38,85000,Engineering,12,4.5,Seattle,Master,Male
+6,Jennifer Taylor,27,60000,HR,4,3.8,Boston,Bachelor,Female
+7,Robert Miller,45,110000,Management,18,4.8,New York,Master,Male
+8,Lisa Anderson,33,72000,Sales,9,4.1,Chicago,Bachelor,Female
+9,James Thomas,36,80000,Engineering,10,4.3,San Francisco,Master,Male
+10,Michelle Garcia,30,68000,Marketing,6,3.9,Los Angeles,Bachelor,Female
+11,William Martinez,41,92000,Management,14,4.6,Seattle,Master,Male
+12,Patricia Robinson,28,62000,HR,5,3.7,Boston,Bachelor,Female
+13,Richard Lewis,39,88000,Engineering,13,4.4,New York,PhD,Male
+14,Elizabeth Walker,32,71000,Sales,8,4.0,Chicago,Bachelor,Female
+15,Joseph Hall,44,105000,Management,17,4.7,San Francisco,Master,Male
+16,Nancy Allen,26,58000,HR,3,3.6,Los Angeles,Bachelor,Female
+17,Thomas Young,37,82000,Engineering,11,4.2,Seattle,Master,Male
+18,Karen King,31,69000,Marketing,7,3.8,Boston,Bachelor,Female
+19,Charles Scott,43,98000,Management,16,4.5,New York,Master,Male
+20,Betty Green,35,76000,Sales,10,4.1,Chicago,Bachelor,Female
+21,Daniel Baker,40,90000,Engineering,14,4.4,San Francisco,Master,Male
+22,Margaret Adams,29,64000,HR,6,3.7,Los Angeles,Bachelor,Female
+23,Paul Nelson,46,115000,Management,19,4.9,Seattle,PhD,Male
+24,Sandra Carter,34,74000,Sales,9,4.0,Boston,Bachelor,Female
+25,Mark Mitchell,38,86000,Engineering,12,4.3,New York,Master,Male
+26,Donna Roberts,27,61000,Marketing,4,3.6,Chicago,Bachelor,Female
+27,George Phillips,42,96000,Management,15,4.6,San Francisco,Master,Male
+28,Ruth Evans,32,70000,Sales,8,3.9,Los Angeles,Bachelor,Female
+29,Kenneth Collins,39,89000,Engineering,13,4.2,Seattle,Master,Male
+30,Carol Stewart,28,63000,HR,5,3.7,Boston,Bachelor,Female

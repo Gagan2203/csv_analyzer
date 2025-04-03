@@ -1,0 +1,186 @@
+<!-- ML Insights Tab -->
+<div class="tab-pane fade" id="ml" role="tabpanel" aria-labelledby="ml-tab">
+    <h3 class="sub-header">Machine Learning Insights</h3>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="ml-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pca-tab" data-bs-toggle="tab" data-bs-target="#pca" type="button" role="tab" aria-controls="pca" aria-selected="true">PCA</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="clustering-tab" data-bs-toggle="tab" data-bs-target="#clustering" type="button" role="tab" aria-controls="clustering" aria-selected="false">Clustering</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="regression-tab" data-bs-toggle="tab" data-bs-target="#regression" type="button" role="tab" aria-controls="regression" aria-selected="false">Regression</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="classification-tab" data-bs-toggle="tab" data-bs-target="#classification" type="button" role="tab" aria-controls="classification" aria-selected="false">Classification</button>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content" id="ml-tabs-content">
+                <!-- PCA Tab -->
+                <div class="tab-pane fade show active" id="pca" role="tabpanel" aria-labelledby="pca-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="pca-columns" class="form-label">Select numeric columns for PCA:</label>
+                            <select class="form-select" id="pca-columns" multiple>
+                                <!-- Options will be inserted here -->
+                            </select>
+                            <div class="form-text">Hold Ctrl/Cmd to select multiple columns</div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="pca-components" class="form-label">Number of components:</label>
+                            <input type="number" class="form-control" id="pca-components" min="2" value="2">
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button id="generate-pca" class="btn btn-primary">Run PCA Analysis</button>
+                        </div>
+                    </div>
+                    <div id="pca-results" style="display: none;">
+                        <h4>Explained Variance</h4>
+                        <div class="visualization-container" id="pca-variance-container"></div>
+                        
+                        <h4>PCA Scatter Plot</h4>
+                        <div class="visualization-container" id="pca-scatter-container"></div>
+                        
+                        <h4>Feature Importance</h4>
+                        <div class="visualization-container" id="pca-importance-container"></div>
+                    </div>
+                </div>
+                
+                <!-- Clustering Tab -->
+                <div class="tab-pane fade" id="clustering" role="tabpanel" aria-labelledby="clustering-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="clustering-columns" class="form-label">Select numeric columns for clustering:</label>
+                            <select class="form-select" id="clustering-columns" multiple>
+                                <!-- Options will be inserted here -->
+                            </select>
+                            <div class="form-text">Hold Ctrl/Cmd to select multiple columns</div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="clustering-k" class="form-label">Number of clusters (k):</label>
+                            <input type="number" class="form-control" id="clustering-k" min="2" max="10" value="3">
+                        </div>
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button id="generate-clustering" class="btn btn-primary">Run Clustering</button>
+                        </div>
+                    </div>
+                    <div id="clustering-results" style="display: none;">
+                        <h4>Cluster Centers</h4>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="cluster-centers-table">
+                                <!-- Cluster centers will be inserted here -->
+                            </table>
+                        </div>
+                        
+                        <h4>Cluster Scatter Plot</h4>
+                        <div class="visualization-container" id="clustering-scatter-container"></div>
+                        
+                        <h4>Cluster Distribution</h4>
+                        <div class="visualization-container" id="clustering-distribution-container"></div>
+                        
+                        <div class="mt-3">
+                            <a id="download-clustered-data" class="btn btn-outline-primary" href="#" download>Download Clustered Data</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Regression Tab -->
+                <div class="tab-pane fade" id="regression" role="tabpanel" aria-labelledby="regression-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="regression-target" class="form-label">Select target column:</label>
+                            <select class="form-select" id="regression-target">
+                                <!-- Options will be inserted here -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="regression-features" class="form-label">Select feature columns:</label>
+                            <select class="form-select" id="regression-features" multiple>
+                                <!-- Options will be inserted here -->
+                            </select>
+                            <div class="form-text">Hold Ctrl/Cmd to select multiple columns. Leave empty to use all numeric columns.</div>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="regression-test-size" class="form-label">Test size (%):</label>
+                            <input type="number" class="form-control" id="regression-test-size" min="10" max="50" value="20">
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button id="generate-regression" class="btn btn-primary">Train Model</button>
+                        </div>
+                    </div>
+                    <div id="regression-results" style="display: none;">
+                        <h4>Regression Metrics</h4>
+                        <div class="table-responsive">
+                            <table class="table table-striped" id="regression-metrics-table">
+                                <!-- Regression metrics will be inserted here -->
+                            </table>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Actual vs Predicted</h4>
+                                <div class="visualization-container" id="regression-predictions-container"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Residuals Plot</h4>
+                                <div class="visualization-container" id="regression-residuals-container"></div>
+                            </div>
+                        </div>
+                        
+                        <h4>Feature Importance</h4>
+                        <div class="visualization-container" id="regression-importance-container"></div>
+                    </div>
+                </div>
+                
+                <!-- Classification Tab -->
+                <div class="tab-pane fade" id="classification" role="tabpanel" aria-labelledby="classification-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="classification-target" class="form-label">Select target column:</label>
+                            <select class="form-select" id="classification-target">
+                                <!-- Options will be inserted here -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="classification-features" class="form-label">Select feature columns:</label>
+                            <select class="form-select" id="classification-features" multiple>
+                                <!-- Options will be inserted here -->
+                            </select>
+                            <div class="form-text">Hold Ctrl/Cmd to select multiple columns. Leave empty to use all numeric columns.</div>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="classification-test-size" class="form-label">Test size (%):</label>
+                            <input type="number" class="form-control" id="classification-test-size" min="10" max="50" value="20">
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button id="generate-classification" class="btn btn-primary">Train Model</button>
+                        </div>
+                    </div>
+                    <div id="classification-results" style="display: none;">
+                        <h4>Classification Metrics</h4>
+                        <div id="classification-accuracy"></div>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>Confusion Matrix</h4>
+                                <div class="visualization-container" id="classification-confusion-matrix-container"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h4>Classification Report</h4>
+                                <div class="visualization-container" id="classification-report-container"></div>
+                            </div>
+                        </div>
+                        
+                        <h4>Feature Importance</h4>
+                        <div class="visualization-container" id="classification-importance-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

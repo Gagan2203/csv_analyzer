@@ -1,0 +1,97 @@
+<!-- Visualizations Tab -->
+<div class="tab-pane fade" id="visualizations" role="tabpanel" aria-labelledby="visualizations-tab">
+    <h3 class="sub-header">Data Visualizations</h3>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="visualization-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="distribution-tab" data-bs-toggle="tab" data-bs-target="#distribution" type="button" role="tab" aria-controls="distribution" aria-selected="true">Distribution</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="correlation-tab" data-bs-toggle="tab" data-bs-target="#correlation" type="button" role="tab" aria-controls="correlation" aria-selected="false">Correlation</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="categorical-tab" data-bs-toggle="tab" data-bs-target="#categorical" type="button" role="tab" aria-controls="categorical" aria-selected="false">Categorical</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="scatter-tab" data-bs-toggle="tab" data-bs-target="#scatter" type="button" role="tab" aria-controls="scatter" aria-selected="false">Scatter</button>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content" id="visualization-tabs-content">
+                <!-- Distribution Tab -->
+                <div class="tab-pane fade show active" id="distribution" role="tabpanel" aria-labelledby="distribution-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="distribution-column" class="form-label">Select a numeric column:</label>
+                            <select class="form-select" id="distribution-column">
+                                <!-- Options will be inserted here -->
+                            </select>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-end">
+                            <button id="generate-distribution" class="btn btn-primary">Generate Distribution Plots</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="visualization-container" id="histogram-container"></div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="visualization-container" id="boxplot-container"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Correlation Tab -->
+                <div class="tab-pane fade" id="correlation" role="tabpanel" aria-labelledby="correlation-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button id="generate-correlation" class="btn btn-primary">Generate Correlation Heatmap</button>
+                        </div>
+                    </div>
+                    <div class="visualization-container" id="correlation-container"></div>
+                </div>
+                
+                <!-- Categorical Tab -->
+                <div class="tab-pane fade" id="categorical" role="tabpanel" aria-labelledby="categorical-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="categorical-column" class="form-label">Select a categorical column:</label>
+                            <select class="form-select" id="categorical-column">
+                                <!-- Options will be inserted here -->
+                            </select>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-end">
+                            <button id="generate-categorical" class="btn btn-primary">Generate Bar Plot</button>
+                        </div>
+                    </div>
+                    <div class="visualization-container" id="categorical-container"></div>
+                </div>
+                
+                <!-- Scatter Tab -->
+                <div class="tab-pane fade" id="scatter" role="tabpanel" aria-labelledby="scatter-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-5">
+                            <label for="scatter-x-column" class="form-label">Select X-axis:</label>
+                            <select class="form-select" id="scatter-x-column">
+                                <!-- Options will be inserted here -->
+                            </select>
+                        </div>
+                        <div class="col-md-5">
+                            <label for="scatter-y-column" class="form-label">Select Y-axis:</label>
+                            <select class="form-select" id="scatter-y-column">
+                                <!-- Options will be inserted here -->
+                            </select>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button id="generate-scatter" class="btn btn-primary">Generate Scatter Plot</button>
+                        </div>
+                    </div>
+                    <div class="visualization-container" id="scatter-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

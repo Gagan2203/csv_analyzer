@@ -1,0 +1,61 @@
+<!-- Overview Tab -->
+<div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
+    <h3 class="sub-header">Data Overview</h3>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Basic Information</div>
+                <div class="card-body">
+                    <table class="table">
+                        <tbody id="data-info-table">
+                            <!-- Data info will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">Data Types</div>
+                <div class="card-body">
+                    <div id="data-types-chart"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h3 class="sub-header">Data Preview</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped" id="data-preview-table">
+                    <!-- Data preview will be inserted here -->
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <h3 class="sub-header">Column Information</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-striped" id="column-info-table">
+                    <thead>
+                        <tr>
+                            <th>Column</th>
+                            <th>Data Type</th>
+                            <th>Unique Values</th>
+                            <th>Missing Values</th>
+                            <th>Missing (%)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Column info will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

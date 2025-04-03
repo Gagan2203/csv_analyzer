@@ -1,0 +1,134 @@
+<!-- Statistics Tab -->
+<div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
+    <h3 class="sub-header">Statistical Analysis</h3>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="statistics-tabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="descriptive-tab" data-bs-toggle="tab" data-bs-target="#descriptive" type="button" role="tab" aria-controls="descriptive" aria-selected="true">Descriptive</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="group-by-tab" data-bs-toggle="tab" data-bs-target="#group-by" type="button" role="tab" aria-controls="group-by" aria-selected="false">Group By</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="missing-values-tab" data-bs-toggle="tab" data-bs-target="#missing-values" type="button" role="tab" aria-controls="missing-values" aria-selected="false">Missing Values</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="outliers-tab" data-bs-toggle="tab" data-bs-target="#outliers" type="button" role="tab" aria-controls="outliers" aria-selected="false">Outliers</button>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content" id="statistics-tabs-content">
+                <!-- Descriptive Tab -->
+                <div class="tab-pane fade show active" id="descriptive" role="tabpanel" aria-labelledby="descriptive-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button id="generate-descriptive" class="btn btn-primary">Generate Descriptive Statistics</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="descriptive-table">
+                            <!-- Descriptive statistics will be inserted here -->
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Group By Tab -->
+                <div class="tab-pane fade" id="group-by" role="tabpanel" aria-labelledby="group-by-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <label for="group-column" class="form-label">Select column to group by:</label>
+                            <select class="form-select" id="group-column">
+                                <!-- Options will be inserted here -->
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="agg-column" class="form-label">Select column to aggregate:</label>
+                            <select class="form-select" id="agg-column">
+                                <!-- Options will be inserted here -->
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="agg-function" class="form-label">Aggregation function:</label>
+                            <select class="form-select" id="agg-function">
+                                <option value="Mean">Mean</option>
+                                <option value="Median">Median</option>
+                                <option value="Sum">Sum</option>
+                                <option value="Min">Min</option>
+                                <option value="Max">Max</option>
+                                <option value="Count">Count</option>
+                                <option value="Std Dev">Std Dev</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button id="generate-group-by" class="btn btn-primary">Generate</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="group-by-table">
+                            <!-- Group by results will be inserted here -->
+                        </table>
+                    </div>
+                    <div class="visualization-container" id="group-by-container"></div>
+                </div>
+                
+                <!-- Missing Values Tab -->
+                <div class="tab-pane fade" id="missing-values" role="tabpanel" aria-labelledby="missing-values-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-12 d-flex justify-content-end">
+                            <button id="generate-missing-values" class="btn btn-primary">Analyze Missing Values</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="missing-values-table">
+                            <thead>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Missing Values</th>
+                                    <th>Missing (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Missing values will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Outliers Tab -->
+                <div class="tab-pane fade" id="outliers" role="tabpanel" aria-labelledby="outliers-tab">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="outlier-method" class="form-label">Select outlier detection method:</label>
+                            <select class="form-select" id="outlier-method">
+                                <option value="iqr">IQR Method</option>
+                                <option value="zscore">Z-Score Method</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 d-flex align-items-end">
+                            <button id="generate-outliers" class="btn btn-primary">Detect Outliers</button>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="outliers-table">
+                            <thead>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Outlier Count</th>
+                                    <th>Outlier (%)</th>
+                                    <th>Min Outlier</th>
+                                    <th>Max Outlier</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Outliers will be inserted here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
