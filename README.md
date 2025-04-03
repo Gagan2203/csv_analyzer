@@ -40,3 +40,6 @@ streamlit run app.py
 ## Sample Data
 
 A sample dataset (`sample_data.csv`) is included for testing purposes.
+
+[![Watch the Demo](./csv_analyzer_demo.png)](https://drive.google.com/file/d/1k-lLvTqXvn6jVPf7veY1Jd1Q4DgUGHo1/view?usp=sharing)
+
