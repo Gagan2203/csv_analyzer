@@ -222,12 +222,12 @@ class GeminiAnalyzer:
         try:
             # Configure Gemini model
             model = genai.GenerativeModel('gemini-2.0-flash')
-            st.write(f"PASSING PROMPT: {prompt}")
+            # st.write(f"PASSING PROMPT: {prompt}")
             
             # Generate response
 
             response = model.generate_content(prompt)
-            st.write(f"MODEL OUTPUT: {response.candidates[0].content.parts[0].text}")
+            # st.write(f"MODEL OUTPUT: {response.candidates[0].content.parts[0].text}")
 
             return response.candidates[0].content.parts[0].text
         
